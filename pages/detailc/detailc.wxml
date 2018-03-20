@@ -1,0 +1,142 @@
+<!-- 弹出设置文字  -->
+<view>
+  <modal title="啊!出错啦!没登录?" hidden="{{modalHidden}}" confirm-text="去登录" cancel-text="算啦" bindconfirm="modalBindaconfirm" bindcancel="modalBindcancel"></modal>
+</view>
+
+
+<!--index.wxml-->
+<view class="body">
+  <view class="border-slice">
+    <view class="index-head-bottom">
+      <view class="flex" bindtap="toPublishc">
+        <view class="index-sign"></view>评论</view>
+      <view class="flex">
+        <view class="index-focus"></view>关注</view>
+    </view>
+  </view>
+
+  <view class="border-slice">
+    <!--  
+    <block wx:for="{{articles}}" wx:for-item="item" wx:key="id">
+  -->
+    <!-- 贴主信息-->
+    <view>
+      <view style="padding:30rpx 24rpx 16rpx; float:left">
+        <image style="width:40px;height:40px;overflow:hidden;" src="{{articles.user.icon}}"></image>
+      </view>
+      <view style="padding:30rpx 0px 0px; overflow:hidden; height:110rpx;">
+        <view class="aricle-user-wrap">
+          <!--  这里显示注册时的用户名  -->
+          <!--
+                <text class="index-poster-name">V.{{item.user.username}}</text>
+                -->
+          <text class="index-poster-name">V.{{articles.user.realname}}</text>
+          <text class="index-poster-kind">V.{{articles.user.level}}</text>
+          <view class="index-poster-arrow" catchtap="openArrow" data-user-id="{{item.rser.id}}"></view>
+        </view>
+        <view style="height:40rpx">
+          <text class="index-post-info">{{articles.datetime}}</text>
+          <text class="index-post-info">浏览{{articles.view}}</text>
+        </view>
+      </view>
+    </view>
+    <view style="clear:both"></view>
+    <!-- 帖子正文 -->
+    <view>
+      <view class="article-content-container">
+
+        <view href="../logs" class="article-content-title" wx:if="{{articles.title}}">{{articles.title}}</view>
+        <view>
+          <a class="section-theme" bindtap="toBankuai" wx:if="{{articles.theme}}">{{articles.theme}}</a>
+          <a class="article-content">{{articles.detail}}</a>
+        </view>
+
+        <view wx:if="{{articles.picture}}">
+          <image style="max-height:100%;max-width:100%" src="{{articles.picture}}" class="article-image"></image>
+        </view>
+      </view>
+      <!-- 转评赞 -->
+      <view>
+        <!-- 转发 -->
+        <!--
+          <view class="fr res" bindtap="addpraise" id="{{articles.id}}" data-praise="{{articles.praise}}" >
+            <view class="icon-zan {{IsPraise == 0?'':'zaned'}}"></view>
+            <em style="color:{{IsPraise == 0?'':'#5a85ce'}}" class="em">赞 {{praiseNumber}}</em>
+          </view>
+         -->
+        <view class="fr res" bindtap="addpraise" id="{{articles.id}}" data-praise="{{articles.praise}}">
+          <view wx:if="{{IsPraise==0}}">
+            <view class="icon-zan"></view>
+            <em style="color:" class="em">赞 {{articles.praise}}</em>
+          </view>
+          <view wx:else>
+            <view class="icon-zan zaned"></view>
+            <em style="color:#5a85ce" class="em">赞 {{praiseNumber}}</em>
+          </view>
+        </view>
+
+
+
+        <view class="fr res" bindtap="onLoad" id="{{articles.id}}">
+          <view class="icon-ping"></view>
+          <em class="em">评 {{articles.replies.length}}</em>
+        </view>
+        <view>
+          <button open-type="share">
+            <view class="fr res">
+              <view class="icon-zhuan">
+                <em class="em2">转{{articles.transmitCount}}</em>
+              </view>
+            </view>
+          </button>
+        </view>
+        <view style="clear:both"></view>
+      </view>
+    </view>
+    <!-- 
+    </block>
+    -->
+  </view>
+
+
+
+
+  <!-- 回复内容 -->
+  <scroll-view class="art-content" scroll-y="true" scroll-x="false" bindscrolltolower="moreArticle" data-page-index="{{pageIndex}}" style="height: 900px;width:100%;">
+
+    <!-- 回复信息 -->
+    <view wx:if="{{articles.replies}}" class="comment-container">
+      <view style="width:7%">
+        <view class="comment-icon"></view>
+      </view>
+      <view class="comment-content">
+        <block wx:for="{{articles.replies}}" wx:for-item="comment" wx:key="id">
+          <view class="res-info">
+            <!-- 头像 -->
+            <view class="comment-content-image-wrap">
+              <image style="width:47px;height:47px;padding:6px" src="{{comment.user.icon}}"></image>
+            </view>
+            <view class="comment-content-msg-wrap">
+              <view>
+                <view class="res-content-name">{{comment.user.realname}}</view>
+                <view class="res-content-time">{{comment.replyDatetime}}</view>
+                <view style="clear:both"></view>
+              </view>
+              <!-- 文字回复 -->
+              <view class="res-content">
+                <text wx:if="{{comment.DUser}}">回复<text style="color:#5a85ce;max-width:110px;">@{{comment.user.username}} : </text></text>
+                <text>{{comment.replyDetail}}</text>
+              </view>
+              <view wx:if="{{comment.replyPicture}}">
+                <image style="width:66px;height:66px;" src="{{comment.replyPicture}}"></image>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+
+  </scroll-view>
+
+
+</view>

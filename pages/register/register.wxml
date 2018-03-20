@@ -1,0 +1,23 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+<!-- 
+    <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" openType="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+-->
+   <form bindsubmit="register_json">
+    *用户名：<input class="style-input" type="text" name="username" placeholder="输入账号"/>
+    *密码：<input class="style-input" type="text" name="password" password="true" placeholder="输入密码"/>
+    手机号：<input class="style-input" type="text" name="phone" placeholder="可以为空"/>
+    学号：<input class="style-input" type="text" name="card"  placeholder="可以为空"/>
+    <button class="style-button" formType="submit">注册</button>
+    <button class="style-button" formType="reset">重置</button>
+    </form>
+  </view>
+</view>

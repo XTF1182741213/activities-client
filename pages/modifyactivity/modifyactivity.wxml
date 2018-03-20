@@ -1,0 +1,55 @@
+<form bindsubmit="modifyActivity" data-id="{{id}}">
+  <view class="section section_gap">
+    <view class="section__title">活动名称:</view>
+    <input name="title" placeholder="名称" value="{{title}}" />
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">活动时间:</view>
+    <input name="time" placeholder="时间" value="{{time}}" />
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">活动地点:</view>
+    <input name="place" placeholder="地点" value="{{place}}" />
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">项目名称:</view>
+    <input name="aname" placeholder="项目名称" value="{{aname}}" />
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">素拓类型:</view>
+    <input name="types" placeholder="素拓类型" value="{{types}}" />
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">活动等级:</view>
+    <input name="rank" placeholder="活动等级" value="{{rank}}" />
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">面向对象:</view>
+    <input name="target" placeholder="对象" value="{{target}}" />
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">举办单位:</view>
+    <input name="sponsor" placeholder="单位" value="{{sponsor}}" />
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">详细介绍:</view>
+    <input name="content" placeholder="详情" value="{{content}}" />
+  </view>
+   <view><text>更改活动头像</text></view>
+  <view class="shangchuan" bindtap="chooseimg">
+    <image style="width:100%;height:100%;" src="{{src}}">
+    </image>
+  </view>
+   <view><text>更改内容图片</text></view>
+  <view class="shangchuan" bindtap="choosepicture">
+    <image style="width:100%;height:100%;" src="{{src2}}">
+    </image>
+  </view>
+
+
+
+  <view class="btn-area section_gap">
+    <button formType="submit">确认修改</button>
+  </view>
+</form>
+<button class="btn-area section_gap2" bindtap="deleteActivity" data-id="{{id}}">删除</button>

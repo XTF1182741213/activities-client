@@ -1,0 +1,54 @@
+{
+  "pages":[   
+    "pages/alists/alists", 
+    "pages/login/login",
+    "pages/publisht/publisht",
+    "pages/register/register",
+    "pages/detaila/detaila",
+    "pages/detailc/detailc",
+    "pages/tlists/tlists",
+    "pages/logs/logs",
+    "pages/publisha/publisha",
+    "pages/publishc/publishc",
+    "pages/mine/mine",
+    "pages/alistsperson/alistsperson",
+    "pages/modifyactivity/modifyactivity",
+    "pages/modifyperson/modifyperson",
+    "pages/modifytopic/modifytopic"
+    
+  ],
+  "window":{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "掌上活动",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+        "color": "#fff",
+        "selectedColor": "#56abe4",
+        "backgroundColor": "#000",
+        "borderStyle": "black",
+    "list": [
+{
+  "pagePath": "pages/alists/alists",
+  "text": "素拓活动",
+  "iconPath": "images/tab_address_normal.png",
+  "selectedIconPath": "images/tab_address_pressed.png"
+
+},
+{
+  "pagePath": "pages/tlists/tlists",
+  "text": "下课聊",
+  "iconPath": "images/tab_weixin_normal.png",
+  "selectedIconPath": "images/tab_weixin_pressed.png"
+},
+{
+  "pagePath": "pages/mine/mine",
+  "text": "我的设置",
+  "iconPath": "images/tab_settings_normal.png",
+  "selectedIconPath": "images/tab_settings_pressed.png"
+}  
+    ]
+  }  
+}

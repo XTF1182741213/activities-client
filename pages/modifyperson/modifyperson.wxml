@@ -1,0 +1,39 @@
+<form bindsubmit="modifyUser">
+    <view class="section section_gap">
+    <view class="section__title">用户名:</view>
+    <input name="username"  disabled="true" value="{{username}}"/>
+    </view>
+   <view class="shangchuan" bindtap="chooseIcons">
+       <image style="width:100%;height:100%;" src="{{src}}">
+       </image>
+     </view>
+     <view class="section section_gap">
+    <view class="section__title">昵称:</view>
+    <input name="realname" placeholder="昵称" value="{{realname}}" />
+    </view>  
+    <view class="section section_gap">
+    <view class="section__title">学生卡:</view>
+    <input name="card" placeholder="学生卡" value="{{card}}" />
+    </view>
+    <view class="section section_gap">
+    <view class="section__title">手机号:</view>
+    <input name="phone" placeholder="手机号" value="{{phone}}"/>
+    </view>
+    <view class="section section_gap">
+    <view class="section__title">邮箱:</view>
+    <input name="email" placeholder="邮箱" value="{{email}}"/>
+    </view>
+        <view class="section section_gap">
+    <view class="section__title">用户密码:</view>
+    <input name="password" placeholder="用户密码" value="{{password}}"/>
+    </view>
+ 
+
+  <view class="btn-area section_gap">
+    <button formType="submit" >确认修改</button>
+  </view>
+</form>
+        <view class="section section_gap">
+    <view class="section__title">确认密码:</view>
+    <input name="confirmpassword" placeholder="确认密码" />
+    </view>  

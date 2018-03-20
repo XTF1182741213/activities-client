@@ -1,0 +1,18 @@
+<!--aboutme.wxml-->
+<view class="warp">
+
+  <view class="title">{{title}}</view>
+  <view class="cTime">{{time}}</view>
+  <view class="img"><image src="{{img}}" class="in-img" background-size="cover" model="scaleToFill"></image></view>
+  <view class="title">地点:{{place}}</view>
+  <view class="title">名称:{{title}}</view>
+  <view class="aname">项目名称:{{aname}}</view>
+  <view class="title">素拓类型:{{types}}</view>
+  <view class="title">活动等级:{{rank}}</view> 
+  <view class="title">对象:{{target}}</view>
+  <view class="title">举办单位:{{sponsor}}</view>
+    <view class="img"><image src="{{picture}}" class="in-img" background-size="cover" model="scaleToFill"></image></view>
+  <view class="content">详情:{{content}}</view>
+  <view class="close" bindtap="closepage"> 返回 </view>
+  <toast hidden="{{toastHidden}}" bindchange="toastChange" duration="3000">{{msg}}</toast>
+</view>
